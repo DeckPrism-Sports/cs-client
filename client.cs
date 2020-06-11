@@ -151,27 +151,36 @@ namespace DPTestApp
         }
 
         public partial class DeckObject
-        {            
+        {
+            [JsonProperty("sport")]
+            public string Sport { get; set; }
+
+            [JsonProperty("group")]
+            public string Group { get; set; }
+
+            [JsonProperty("isBoard")]
+            public bool IsBoard { get; set; }
+
             [JsonProperty("deckID")]
-            public string DeckId { get; set; }
+            public long DeckId { get; set; }
 
-            [JsonProperty("aRot")]
-            public long ARot { get; set; }
+            [JsonProperty("topRot")]
+            public long TopRot { get; set; }
 
-            [JsonProperty("hRot")]
-            public long HRot { get; set; }
+            [JsonProperty("topTeam")]
+            public string TopTeam { get; set; }
 
-            [JsonProperty("aTeam")]
-            public string ATeam { get; set; }
+            [JsonProperty("topCode")]
+            public string TopCode { get; set; }
 
-            [JsonProperty("aCode")]
-            public string ACode { get; set; }
+            [JsonProperty("botRot")]
+            public long BotRot { get; set; }
 
-            [JsonProperty("hTeam")]
-            public string HTeam { get; set; }
+            [JsonProperty("botTeam")]
+            public string BotTeam { get; set; }
 
-            [JsonProperty("hCode")]
-            public string HCode { get; set; }
+            [JsonProperty("botCode")]
+            public string BotCode { get; set; }
 
             [JsonProperty("gameTimeUTC")]
             public DateTimeOffset GameTimeUtc { get; set; }
@@ -179,35 +188,20 @@ namespace DPTestApp
             [JsonProperty("isGameLinesActive")]
             public bool IsGameLinesActive { get; set; }
 
-            [JsonProperty("situation")]
-            public object Situation { get; set; }
+            [JsonProperty("Situation")]
+            public Situation Situation { get; set; }
 
-            [JsonProperty("gameLines")]
+            [JsonProperty("GameLines")]
             public GameLines[] GameLines { get; set; }
-
-            [JsonProperty("isBoard")]
-            public bool IsBoard { get; set; }
-
-            [JsonProperty("gameId")]
-            public long GameId { get; set; }
-
-            [JsonProperty("sport")]
-            public string Sport { get; set; }
-
-            [JsonProperty("group")]
-            public string[] Group { get; set; }
         }
 
         public partial class GameLines
         {
-            [JsonProperty("stadiumLeague")]
-            public long StadiumLeague { get; set; }
-
             [JsonProperty("lineId")]
             public Guid LineId { get; set; }
 
             [JsonProperty("value")]
-            public long Value { get; set; }
+            public double Value { get; set; }
 
             [JsonProperty("odd")]
             public double Odd { get; set; }
@@ -215,26 +209,11 @@ namespace DPTestApp
             [JsonProperty("suspended")]
             public bool Suspended { get; set; }
 
-            [JsonProperty("name")]
-            public string Name { get; set; }
-
-            [JsonProperty("isHome")]
-            public bool IsHome { get; set; }
+            [JsonProperty("propName")]
+            public string PropName { get; set; }
 
             [JsonProperty("propType")]
             public long PropType { get; set; }
-
-            [JsonProperty("sideName")]
-            public string SideName { get; set; }
-
-            [JsonProperty("limit")]
-            public double Limit { get; set; }
-
-            [JsonProperty("hold")]
-            public long Hold { get; set; }
-
-            [JsonProperty("rotation")]
-            public long Rotation { get; set; }
 
             [JsonProperty("sliderHold")]
             public long SliderHold { get; set; }
@@ -242,15 +221,32 @@ namespace DPTestApp
 
         public partial class Situation
         {
-            public string simulationId { get; set; }
-            public float? aScore { get; set; }
-            public float? hScore { get; set; }
-            public float? quarter { get; set; }
-            public string time { get; set; }
-            public string wBall { get; set; }
-            public float? down { get; set; }
-            public float? distance { get; set; }
-            public string yfog { get; set; }
+            [JsonProperty("situationId")]
+            public string SituationId { get; set; }
+
+            [JsonProperty("topScore")]
+            public long TopScore { get; set; }
+
+            [JsonProperty("botScore")]
+            public long BotScore { get; set; }
+
+            [JsonProperty("quarter")]
+            public long Quarter { get; set; }
+
+            [JsonProperty("time")]
+            public string Time { get; set; }
+
+            [JsonProperty("wBall")]
+            public string WBall { get; set; }
+
+            [JsonProperty("down")]
+            public long Down { get; set; }
+
+            [JsonProperty("distance")]
+            public long Distance { get; set; }
+
+            [JsonProperty("yardline")]
+            public string Yardline { get; set; }
         }
     }
 }
