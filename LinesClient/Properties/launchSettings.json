@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "LinesClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Developer"
+      }
+    }
+  }
+}
